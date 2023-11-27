@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [state, setState] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        document.onclick = (e) => {
+            const target = e.target;
+            if (!target.closest(".menu-btn")) setState(false);
+        };
+    }, [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,58 +29,54 @@ const Navbar = () => {
     }, []);
 
     return (
-        <>
-            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-                <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                    <div class="relative flex h-16 items-center justify-between">
-                        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                            <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                                <span class="absolute -inset-0.5"></span>
-                                <span class="sr-only">Open main menu</span>
-
-                                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
-
-                                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                            <div class="flex flex-shrink-0 items-center">
-                                <img class="h-8 w-auto" src={logo} alt="Logo" />
-                            </div>
-                            <div class="hidden sm:ml-6 sm:block">
-                                <div class="flex space-x-4">
-                                    <Link to="/" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Home</Link>
-                                    <Link to="/aboutus" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">About Us</Link>
-                                    <Link to="/careers" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Careers</Link>
-                                    <Link to="/outsourcing" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Bussiness Outsourcing</Link>
-                                    <Link to="/elearning" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px31 pt-1 text-md font-medium">E-Learning</Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                            <div class="relative ml-3">
-                                <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Login</button>
-                                <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Sign Up</button></div>
-                        </div>
+        <nav className={`navbar md:text-sm  ${scrolled ? 'scrolled' : ''} ${state ? "shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0" : ""}`}
+            style={{ backgroundColor: `${state ? "#fff" : " "}` }}
+        >
+            <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
+                <div className="flex items-center justify-between py-1 md:block">
+                    <a href="javascript:void(0)">
+                        <img className="h-14 w-auto" src={logo} alt="Logo" />
+                    </a>
+                    <div className="md:hidden">
+                        <button className="menu-btn text-gray-500 hover:text-gray-800"
+                            onClick={() => setState(!state)}
+                        >
+                            {
+                                state ? (
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                    </svg>
+                                )
+                            }
+                        </button>
                     </div>
                 </div>
+                <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'}  sm:flex-col lg:flex-row`} >
 
-                <div class="sm:hidden" id="mobile-menu">
-                    <div class="space-y-1 px-2 pb-3 pt-2">
-                        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+                    <ul className="flex flex-col md:flex md:flex-row justify-center items-center space-y-6 md:space-x-6 md:space-y-0">
+                        <Link to="/" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Home</Link>
+                        <Link to="/aboutus" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">About Us</Link>
+                        <Link to="/careers" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Careers</Link>
+                        <Link to="/outsourcing" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Business Outsourcing</Link>
+                        <Link to="/elearning" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">E-Learning</Link>
+                    </ul>
+
+
+                    <div className="flex-1 gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
+                        <Link to="/login" className="block text-gray-600 text-lg font-medium text-center">
+                            Log in
+                        </Link>
+                        <Link to="/signup" className="block py-2.5 px-5 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
+                            Sign in
+                        </Link>
                     </div>
                 </div>
-            </nav>
-
-        </>
+            </div>
+        </nav >
     )
 }
-
 export default Navbar

@@ -5,7 +5,7 @@
 }
 
 .container {
-    width: 90% !important;
+    width: 95% !important;
     margin-inline: auto;
 }
 
@@ -41,6 +41,26 @@ body::-webkit-scrollbar-thumb {
 .course_card:hover {
     transform: translateY(-5px);
 }
+
+
+
+.footer {
+    /* From https://css.glass */
+    background: rgba(105, 249, 255, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(105, 249, 255, 0.3);
+}
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 600px) {

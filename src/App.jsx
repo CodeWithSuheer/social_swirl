@@ -8,6 +8,8 @@ import SelectedCourse from "./components/selectedCourse/SelectedCourse";
 import AboutUs from "./components/aboutus/AboutUs";
 import Careers from "./components/careers/Careers";
 import OutSourcing from "./components/outSourcing/OutSourcing";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 function App() {
 
@@ -22,6 +24,9 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/outsourcing" element={<OutSourcing />} />
           <Route path="/selectedCourse/:id" element={<SelectedCourse />} />
+          {/* ---------- PAGES ---------- */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
         <Footer />
       </BrowserRouter>

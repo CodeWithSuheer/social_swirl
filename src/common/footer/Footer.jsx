@@ -2,122 +2,79 @@ import React from 'react'
 import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
+
+    const footerNavs = [
+        {
+            href: 'javascript:void()',
+            name: 'About'
+        },
+        {
+            href: 'javascript:void()',
+            name: 'Blog'
+        },
+        {
+            href: 'javascript:void()',
+            name: ''
+        },
+        {
+            href: 'javascript:void()',
+            name: 'Team'
+        },
+        {
+            href: 'javascript:void()',
+            name: 'Careers'
+        },
+
+        {
+            href: 'javascript:void()',
+            name: 'Support'
+        }
+    ]
+
     return (
-        <>
-            <footer class="text-gray-600 body-font" style={{ borderTop: "2px solid #cad0dd" }}>
-                <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-                    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-                        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <img class="w-20" src={logo} alt="Logo" />
-                            <span class="ml-3 text-xl">Social Swirl</span>
-                        </a>
-                        <p class="mt-2 text-sm text-gray-500">Explore the world of web development with Social Swirl.</p>
-                    </div>
-                    <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-                        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                            <nav class="list-none mb-10">
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                                </li>
-                            </nav>
-                        </div>
-                        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                            <nav class="list-none mb-10">
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                                </li>
-                            </nav>
-                        </div>
-                        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                            <nav class="list-none mb-10">
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                                </li>
-                            </nav>
-                        </div>
-                        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                            <nav class="list-none mb-10">
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                                </li>
-                            </nav>
-                        </div>
-                    </div>
+        <footer className="footer text-gray-700 px-4 py-5 w-full mx-auto md:px-8">
+            <div className="max-w-lg sm:mx-auto sm:text-center">
+                <img src={logo} className="w-32 sm:mx-auto" />
+                <p className="leading-relaxed mt-2 text-[15px]">
+                    Explore the world of web development with Social Swirl. Join our user-friendly courses led by industry experts, offering hands-on experiences and a clear path to mastering coding
+                </p>
+            </div>
+            <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
+                {
+                    footerNavs.map((item, idx) => (
+                        <li className=" hover:text-gray-800">
+                            <a key={idx} href={item.href}>
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <div className="mt-8 items-center justify-between sm:flex" style={{ borderTop: "1px solid #9bbdc5" }}>
+                <div className="mt-4 pt-2 sm:mt-0">
+                    &copy; 2023 Social Swirl All rights reserved.
                 </div>
-                <div class="bg-blue-400">
-                    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                        <p class="text-gray-600 text-sm text-center sm:text-left">© 2023 Social Swirl —
-                            <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@Daniyal</a>
-                        </p>
-                        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-                            <a class="text-gray-500">
-                                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                <div className="mt-6 pt-2 sm:mt-0">
+                    <ul className="flex items-center space-x-4">
+                        <li className="w-10 h-10 border rounded-full flex items-center justify-center">
+                            <a href="javascript:void()">
+                                <svg class="svg-icon w-6 h-6 text-blue-400" viewBox="0 0 20 20">
+                                    <path fill="none" d="M18.258,3.266c-0.693,0.405-1.46,0.698-2.277,0.857c-0.653-0.686-1.586-1.115-2.618-1.115c-1.98,0-3.586,1.581-3.586,3.53c0,0.276,0.031,0.545,0.092,0.805C6.888,7.195,4.245,5.79,2.476,3.654C2.167,4.176,1.99,4.781,1.99,5.429c0,1.224,0.633,2.305,1.596,2.938C2.999,8.349,2.445,8.19,1.961,7.925C1.96,7.94,1.96,7.954,1.96,7.97c0,1.71,1.237,3.138,2.877,3.462c-0.301,0.08-0.617,0.123-0.945,0.123c-0.23,0-0.456-0.021-0.674-0.062c0.456,1.402,1.781,2.422,3.35,2.451c-1.228,0.947-2.773,1.512-4.454,1.512c-0.291,0-0.575-0.016-0.855-0.049c1.588,1,3.473,1.586,5.498,1.586c6.598,0,10.205-5.379,10.205-10.045c0-0.153-0.003-0.305-0.01-0.456c0.7-0.499,1.308-1.12,1.789-1.827c-0.644,0.28-1.334,0.469-2.06,0.555C17.422,4.782,17.99,4.091,18.258,3.266"></path>
                                 </svg>
                             </a>
-                            <a class="ml-3 text-gray-500">
-                                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                                </svg>
-                            </a>
-                            <a class="ml-3 text-gray-500">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                                </svg>
-                            </a>
-                            <a class="ml-3 text-gray-500">
-                                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-                                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                                </svg>
-                            </a>
-                        </span>
-                    </div>
+                        </li>
+
+                    </ul>
                 </div>
-            </footer>
-        </>
+            </div>
+            <style jsx>{`
+                .svg-icon path,
+                .svg-icon polygon,
+                .svg-icon rect {
+                    fill: currentColor;
+                }
+            `}</style>
+        </footer>
     )
 }
-
 export default Footer
