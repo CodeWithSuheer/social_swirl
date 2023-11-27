@@ -5,9 +5,14 @@ import hero_img_2 from "../../assets/images/hero-img-2.png";
 import Slider from './Slider';
 import "./HomePage.css";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import WaleedsProfile from "../../assets/images/WaleedsProfile.jpeg";
 
 
 const HomePage = () => {
+    const dispatch = useDispatch();
+
+    const courseData = useSelector((state) => state.course.courseData);
 
     const handleClick = () => {
         window.scrollTo(0, 0);
@@ -24,7 +29,7 @@ const HomePage = () => {
 
                         <div class="flex justify-center md:flex-col lg:flex-row flex-row">
                             <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-md px-5 py-2.5 text-center me-2 mb-2">Feasible Timing</button>
-                            <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-md px-5 py-2.5 text-center me-2 mb-2">Project Based Learning</button> </div>
+                            <Link to="/elearning" type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-md px-5 py-2.5 text-center me-2 mb-2">Project Based Learning</Link> </div>
                     </div>
                     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                         <img class="object-cover object-center rounded" alt="hero" src={logo} />
@@ -66,7 +71,7 @@ const HomePage = () => {
 
 
             {/* ----------- SECTION NO 3 -----------  */}
-            <section class="bg-indigo-800">
+            <section class="" style={{ backgroundColor: "#0066b2" }}>
                 <div class="container grid grid-cols-2 gap-8 py-14 mx-auto text-center md:grid-cols-4">
                     <div>
                         <h5 class="text-5xl font-bold text-white">
@@ -125,6 +130,7 @@ const HomePage = () => {
 
             {/* ----------- SECTION NO 4 -----------  */}
             <section class="benefits_section text-gray-600 body-font">
+
                 <div class="container px-5 mx-auto">
                     <div class="text-center mb-12">
                         <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Unlock Your Potential with Our Web Development Course</h1>
@@ -132,7 +138,7 @@ const HomePage = () => {
                     </div>
                     <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                         <div class="p-2 sm:w-1/2 w-full">
-                            <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                            <div class="bg-white rounded flex p-4 h-full items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
                                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                     <path d="M22 4L12 14.01l-3-3"></path>
@@ -144,7 +150,7 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div class="p-2 sm:w-1/2 w-full">
-                            <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                            <div class="bg-white rounded flex p-4 h-full items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
                                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                     <path d="M22 4L12 14.01l-3-3"></path>
@@ -156,7 +162,7 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div class="p-2 sm:w-1/2 w-full">
-                            <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                            <div class="bg-white rounded flex p-4 h-full items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
                                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                     <path d="M22 4L12 14.01l-3-3"></path>
@@ -168,7 +174,7 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div class="p-2 sm:w-1/2 w-full">
-                            <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                            <div class="bg-white rounded flex p-4 h-full items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
                                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                     <path d="M22 4L12 14.01l-3-3"></path>
@@ -189,7 +195,70 @@ const HomePage = () => {
             {/* ----------- SECTION NO 4: SLIDER -----------  */}
             {/* <Slider /> */}
 
-
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto">
+                    <div class="flex flex-col text-center w-full mb-20">
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+                    </div>
+                    <div class="flex flex-wrap -m-2">
+                        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                            <div class="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
+                                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
+                                <div class="flex-grow">
+                                    <h2 class="text-gray-900 title-font font-medium">Waleed Ahmad</h2>
+                                    <p class="text-gray-500">Frontend Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                            <div class="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
+                                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
+                                <div class="flex-grow">
+                                    <h2 class="text-gray-900 title-font font-medium">Haris Saeed</h2>
+                                    <p class="text-gray-500">Backend Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                            <div class="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
+                                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
+                                <div class="flex-grow">
+                                    <h2 class="text-gray-900 title-font font-medium">Suheer Zahid</h2>
+                                    <p class="text-gray-500">Frontend Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                            <div class="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
+                                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
+                                <div class="flex-grow">
+                                    <h2 class="text-gray-900 title-font font-medium">Rehman</h2>
+                                    <p class="text-gray-500">WordPress Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                            <div class="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
+                                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
+                                <div class="flex-grow">
+                                    <h2 class="text-gray-900 title-font font-medium">Awais</h2>
+                                    <p class="text-gray-500">Seo Expert</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                            <div class="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
+                                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
+                                <div class="flex-grow">
+                                    <h2 class="text-gray-900 title-font font-medium">Numan</h2>
+                                    <p class="text-gray-500">Graphic Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
         </>

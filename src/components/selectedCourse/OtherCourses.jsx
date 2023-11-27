@@ -15,9 +15,10 @@ const OtherCourses = ({ otherCourse }) => {
     }
 
     return (
-        <section class="text-gray-600 body-font bg-gray-100">
+        <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto">
-                <h1 class="title-font sm:text-4xl text-3xl mb-10 font-medium text-gray-700 text-center">Other Courses</h1>
+                <h1 class="title-font sm:text-4xl lg:text-5xl mt-5 mb-3 font-medium text-blue-600 text-center">Other Courses</h1>
+                <h4 class="title-font sm:text-xl lg:text-xl text-xl mb-10 font-small text-gray-700 text-center">Explore the other courses we offer and get benefits</h4>
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
@@ -32,9 +33,9 @@ const OtherCourses = ({ otherCourse }) => {
                         }
                     }
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    spaceBetween={50}
+                    spaceBetween={-40}
                     slidesPerView={3}
-                    // navigation
+                    navigation
                     // pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}

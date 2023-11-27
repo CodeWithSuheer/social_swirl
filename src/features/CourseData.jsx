@@ -18,11 +18,12 @@ const courseData = [
         cover: frontEndDev,
         price: "50,000",
         desc: "Social Swirl is one of the best web development training centers in Lahore. A five-star trainer Shahzad Mirza has trained over 50k+ people in Pakistan in the last two decades. Be one of his next superstars.",
-        price: "30000",
         training_type: "online",
         lecture_recording: "Available",
         completion: "Certificate",
-        internship_opportunity: "Bright Students"
+        internship_opportunity: "Bright Students",
+        overview_data: "Our Web Development Course is a comprehensive program designed for those who aspire to build their own applications from scratch. Starting with the basics like HTML5, CSS3, JavaScript, jQuery, Bootstrap, Git, SVN, PHP, MySQL, and more, you’ll get the opportunity to work on real projects under the guidance of our experienced instructors. This hands-on experience will help you build a professional portfolio to impress potential employers.",
+
     },
     {
         id: "02",
@@ -35,11 +36,11 @@ const courseData = [
         cover: GraphicDesigning,
         price: "50,000",
         desc: "Social Swirl is one of the best web development training centers in Lahore. A five-star trainer Shahzad Mirza has trained over 50k+ people in Pakistan in the last two decades. Be one of his next superstars.",
-        price: "30000",
         training_type: "online",
         lecture_recording: "Available",
         completion: "Certificate",
-        internship_opportunity: "Bright Students"
+        internship_opportunity: "Bright Students",
+        overview_data: "Our Web Development Course is a comprehensive program designed for those who aspire to build their own applications from scratch. Starting with the basics like HTML5, CSS3, JavaScript, jQuery, Bootstrap, Git, SVN, PHP, MySQL, and more, you’ll get the opportunity to work on real projects under the guidance of our experienced instructors. This hands-on experience will help you build a professional portfolio to impress potential employers.",
 
     },
     {
@@ -53,11 +54,11 @@ const courseData = [
         cover: SEO,
         price: "50,000",
         desc: "Social Swirl is one of the best web development training centers in Lahore. A five-star trainer Shahzad Mirza has trained over 50k+ people in Pakistan in the last two decades. Be one of his next superstars.",
-        price: "30000",
         training_type: "online",
         lecture_recording: "Available",
         completion: "Certificate",
-        internship_opportunity: "Bright Students"
+        internship_opportunity: "Bright Students",
+        overview_data: "Our Web Development Course is a comprehensive program designed for those who aspire to build their own applications from scratch. Starting with the basics like HTML5, CSS3, JavaScript, jQuery, Bootstrap, Git, SVN, PHP, MySQL, and more, you’ll get the opportunity to work on real projects under the guidance of our experienced instructors. This hands-on experience will help you build a professional portfolio to impress potential employers.",
 
     },
     {
@@ -71,11 +72,11 @@ const courseData = [
         cover: socialMediaMarketing,
         price: "50,000",
         desc: "Social Swirl is one of the best web development training centers in Lahore. A five-star trainer Shahzad Mirza has trained over 50k+ people in Pakistan in the last two decades. Be one of his next superstars.",
-        price: "30000",
         training_type: "online",
         lecture_recording: "Available",
         completion: "Certificate",
-        internship_opportunity: "Bright Students"
+        internship_opportunity: "Bright Students",
+        overview_data: "Our Web Development Course is a comprehensive program designed for those who aspire to build their own applications from scratch. Starting with the basics like HTML5, CSS3, JavaScript, jQuery, Bootstrap, Git, SVN, PHP, MySQL, and more, you’ll get the opportunity to work on real projects under the guidance of our experienced instructors. This hands-on experience will help you build a professional portfolio to impress potential employers.",
 
     },
     {
@@ -89,11 +90,11 @@ const courseData = [
         cover: backEndDev,
         price: "50,000",
         desc: "Social Swirl is one of the best web development training centers in Lahore. A five-star trainer Shahzad Mirza has trained over 50k+ people in Pakistan in the last two decades. Be one of his next superstars.",
-        price: "30000",
         training_type: "online",
         lecture_recording: "Available",
         completion: "Certificate",
-        internship_opportunity: "Bright Students"
+        internship_opportunity: "Bright Students",
+        overview_data: "Our Web Development Course is a comprehensive program designed for those who aspire to build their own applications from scratch. Starting with the basics like HTML5, CSS3, JavaScript, jQuery, Bootstrap, Git, SVN, PHP, MySQL, and more, you’ll get the opportunity to work on real projects under the guidance of our experienced instructors. This hands-on experience will help you build a professional portfolio to impress potential employers.",
 
     },
     {
@@ -107,11 +108,11 @@ const courseData = [
         cover: hr_Management,
         price: "50,000",
         desc: "Social Swirl is one of the best web development training centers in Lahore. A five-star trainer Shahzad Mirza has trained over 50k+ people in Pakistan in the last two decades. Be one of his next superstars.",
-        price: "30000",
         training_type: "online",
         lecture_recording: "Available",
         completion: "Certificate",
-        internship_opportunity: "Bright Students"
+        internship_opportunity: "Bright Students",
+        overview_data: "Our Web Development Course is a comprehensive program designed for those who aspire to build their own applications from scratch. Starting with the basics like HTML5, CSS3, JavaScript, jQuery, Bootstrap, Git, SVN, PHP, MySQL, and more, you’ll get the opportunity to work on real projects under the guidance of our experienced instructors. This hands-on experience will help you build a professional portfolio to impress potential employers.",
 
     },
 

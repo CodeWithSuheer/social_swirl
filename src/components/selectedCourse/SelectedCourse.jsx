@@ -25,11 +25,12 @@ const SelectedCourse = () => {
 
     return (
         <>
+            {/* ----------- COURSE RELATED DETAILS -----------  */}
             <section class="selected_course text-gray-600 body-font">
-                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                <div class="container mx-auto flex px-5 pt-24 pb-16 md:flex-row flex-col items-center">
                     {selectedCourse.map((course) => (
                         <>
-                            <article className='selected_course-artilce'>
+                            <article className='selected_course-article'>
                                 <div class="flex items-center mb-4">
                                     <img class="w-10 h-10 me-4 rounded-full" src={course.instructor_img} alt="" />
                                     <div class="font-medium dark:text-white">
@@ -58,29 +59,33 @@ const SelectedCourse = () => {
                                     <p className='text-sm'>4.9</p>
                                 </div>
 
-                                <p class="my-4 pr-8 text-gray-500 dark:text-gray-400">{course.desc}</p>
+                                <p class="my-4 pr-8 text-lg text-gray-700">{course.desc}</p>
 
+                                <div className="Features mt-5 mb-5" id='Features'>
+                                    <h1 class="title-font sm:text-4xl lg:text-3xl mb-3 font-medium text-gray-900">
+                                        <span className='text-blue-900 mr-1'>#</span>Features
+                                    </h1>
+                                    <ul className='ml-10'>
+                                        <li className='text-lg text-gray-700 list-disc'>Training in the supervision of a veteran web developer and freelance</li>
+                                        <li className='text-lg text-gray-700 list-disc'>Opportunity to get an internship after training.</li>
+                                        <li className='text-lg text-gray-700 list-disc'>Focus on the in-demand technologies</li>
+                                        <li className='text-lg text-gray-700 list-disc'>A fast-track training that surely train you in 3 months.</li>
+                                    </ul>
+                                </div>
 
-                                <div className="Features mb-5">
-                                    <h1 class="title-font sm:text-4xl lg:text-3xl mb-3 font-medium text-gray-900">Features</h1>
-                                    <ul className='pl-3'>
-                                        <li className='text-md'>Training in the supervision of a veteran web developer and freelance supersta</li>
-                                        <li className='text-md'>Opportunity to get an internship after training.</li>
-                                        <li className='text-md'>Focus on the in-demand technologies</li>
-                                        <li className='text-md'>A fast-track training that surely train you in 3 months.</li>
+                                <div className="Prerequisites mt-5 mb-5">
+                                    <h1 class="title-font sm:text-4xl lg:text-3xl mb-2 font-medium text-gray-900">
+                                        <span className='text-blue-900 mr-1'>#</span>Prerequisites
+                                    </h1>
+                                    <ul className='ml-10'>
+                                        <li className='text-lg text-gray-700 list-disc'>Basic knowledge of computers.</li>
+                                        <li className='text-lg text-gray-700 list-disc'>Basic English reading and writing skills.</li>
+                                        <li className='text-lg text-gray-700 list-disc'>Basic communication skills.</li>
+                                        <li className='text-lg text-gray-700 list-disc'>1 laptop or PC with general specifications.</li>
                                     </ul>
                                 </div>
 
 
-                                <div className="Prerequisites mb-5">
-                                    <h1 class="title-font sm:text-4xl lg:text-3xl mb-2 font-medium text-gray-900">Prerequisites</h1>
-                                    <ul className='pl-3'>
-                                        <li className='text-md'>Basic knowledge of computers.</li>
-                                        <li className='text-md'>Basic English reading and writing skills.</li>
-                                        <li className='text-md'>Basic communication skills.</li>
-                                        <li className='text-md'>1 laptop or PC with general specifications.</li>
-                                    </ul>
-                                </div>
 
                                 {/* <div className="contact mt-8 mb-5">
                                     <h1 class="title-font sm:text-4xl lg:text-3xl mb-2 font-medium text-gray-900">Contact Us</h1>
@@ -94,19 +99,111 @@ const SelectedCourse = () => {
                                 </div> */}
                             </article>
 
-
-
                             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                                <img class="object-cover object-center rounded" alt="hero" src={course.cover} />
-                                <button class="button mt-10 mx-auto">
-                                    <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path>
-                                    </svg>
-                                    ENROLL NOW
-                                </button>
+
+                                <div className="cover_img">
+                                    <img class="object-cover object-center rounded" alt="hero" src={course.cover} />
+                                </div>
+
+                                <div className="price_card my-10 mx-auto">
+                                    <div class="block max-w-sm p-6 border border-gray-200 rounded-lg shadow bg-white dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Course Fee: {course.price}</h5>
+                                        <p class="font-normal text-gray-700 dark:text-gray-400">Unlock your potential with our comprehensive web development course. Gain the knowledge required not just to enter the job market, but to stand out and make a lasting impact.</p>
+
+                                        <button class="button mt-5">
+                                            <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>
+                                            ENROLL NOW
+                                        </button>
+                                    </div>
+
+                                </div>
+
+
+
                             </div>
                         </>
                     ))}
+                </div>
+            </section>
+
+            {/* ----------- EXTRA-COURSE RELATED DETAILS -----------  */}
+            <section className="overview text-gray-600 body-font">
+                <div class="container mx-auto flex px-5 py-2 flex-col">
+                    {selectedCourse.map((course) => (
+                        <>
+                            <h1 class="title-font sm:text-2xl lg:text-4xl mb-1 font-medium text-gray-900">{course.name} Overview</h1>
+                            <p class="my-4 pr-8 sm:text-md lg:text-lg text-gray-700">{course.overview_data}</p>
+                        </>
+                    ))}
+                </div>
+            </section>
+
+            {/* ----------- STUDENTS REVIEWS -----------  */}
+            <section>
+                <div class="container mx-auto flex px-5 pt-20 pb-14 flex-col">
+                    <h1 class="title-font sm:text-2xl lg:text-4xl mb-8 font-medium text-gray-700 text-center">Our Students Reviews</h1>
+                    <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
+                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-b border-gray-300 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Game-Changing Experience</h3>
+                                <p class="my-4">This course provided a game-changing experience for me. The hands-on projects and real-world applications significantly enhanced my web development skills.</p>
+                            </blockquote>
+                            <figcaption class="flex items-center justify-center ">
+                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture" />
+                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                                    <div>Javiad</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400 ">Frontend Developer at ABC Tech</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-b border-gray-300 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Invaluable Insights</h3>
+                                <p class="my-4">The course content was excellent, providing invaluable insights into the latest web development technologies. It prepared me well for real-world projects.</p>
+                            </blockquote>
+                            <figcaption class="flex items-center justify-center ">
+                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture" />
+                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                                    <div>Obama Jamshed</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Full Stack Developer at XYZ Innovations</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-b border-gray-300 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
+                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Practical Skills Gained</h3>
+                                <p class="my-4">I gained practical skills that are directly applicable in the industry. The course structure and mentor support were instrumental in my success.</p>
+                            </blockquote>
+                            <figcaption class="flex items-center justify-center ">
+                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture" />
+                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                                    <div>Trump Malik</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Software Engineer at WebSolutions</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-gray-300 rounded-b-lg md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Career-Boosting Course</h3>
+                                <p class="my-4">Enrolling in this course was a career-changing decision. The practical approach and industry-relevant projects elevated my coding and problem-solving abilities.</p>
+                            </blockquote>
+                            <figcaption class="flex items-center justify-center ">
+                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture" />
+                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                                    <div>Sunny Rana</div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">Web Developer at Tech Innovate</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            {/* ----------- VIDEO SECTIONS -----------  */}
+            <section>
+                <div class="container mx-auto px-5 pt-20 pb-14" style={{ maxWidth: "85%" }}>
+                    <h1 class="title-font sm:text-2xl lg:text-4xl mb-8 font-medium text-gray-700 text-center"> Success Stories from Our Web Development Course</h1>
+                    <iframe className='w-full rounded-lg' height="600px" src="https://www.youtube.com/embed/7fjOw8ApZ1I?si=ld69cphb9w2u9_gJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </section>
 

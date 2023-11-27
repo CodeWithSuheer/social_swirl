@@ -17,10 +17,10 @@ const E_learning = () => {
         <>
             <section className="elearning">
                 <div class="w-full p-12">
-                    <div class="flex items-end justify-between mt-14 mb-8 header">
+                    <div class="flex items-end justify-between mt-14 mb-4 header">
                         <div class="title ml-9">
                             <p class="mb-4 text-4xl font-bold text-gray-800">Our Courses</p>
-                            <p class="text-xl font-light text-gray-400">All Courses are made by Experienced Experts</p>
+                            <p class="text-xl text-gray-600">All Courses are made by Experienced Experts</p>
                         </div>
                     </div>
 

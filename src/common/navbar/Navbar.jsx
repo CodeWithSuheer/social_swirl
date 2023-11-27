@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
-            <nav class="navbar">
+            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
                 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div class="relative flex h-16 items-center justify-between">
                         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -29,11 +45,11 @@ const Navbar = () => {
                             </div>
                             <div class="hidden sm:ml-6 sm:block">
                                 <div class="flex space-x-4">
-                                    <Link to="/" class="text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded-md px-3 py-2 text-md font-medium">Home</Link>
-                                    <Link to="/elearning" class="text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded-md px-3 py-2 text-md font-medium">About Us</Link>
-                                    <Link to="/elearning" class="text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded-md px-3 py-2 text-md font-medium">Careers</Link>
-                                    <Link to="/elearning" class="text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded-md px-3 py-2 text-md font-medium">Bussiness Outsourcing</Link>
-                                    <Link to="/elearning" class="text-gray-800 hover:bg-gray-100 hover:text-gray-800 rounded-md px-3 py-2 text-md font-medium">E-Learning</Link>
+                                    <Link to="/" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Home</Link>
+                                    <Link to="/aboutus" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">About Us</Link>
+                                    <Link to="/careers" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Careers</Link>
+                                    <Link to="/outsourcing" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Bussiness Outsourcing</Link>
+                                    <Link to="/elearning" class="button_navbar text-gray-600 hover:text-gray-800 rounded-md px31 pt-1 text-md font-medium">E-Learning</Link>
                                 </div>
                             </div>
                         </div>
