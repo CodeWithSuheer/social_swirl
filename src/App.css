@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90% !important;
+    margin-inline: auto;
+}
+
+body {
+    /* background-color: #f7f7f7 !important; */
+    --sb-track-color: #98a5ab;
+    --sb-thumb-color: #6366f1;
+    --sb-size: 6px;
+
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 12px;
+
+}
+
+.course_card {
+    transition: .3s ease-in-out;
+}
+
+.course_card:hover {
+    transform: translateY(-5px);
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 97% !important;
+    }
+}

@@ -1,0 +1,10 @@
+.hero-title {
+    background: rgb(7, 182, 213);
+    background: linear-gradient(90deg, rgba(7, 182, 213, 1) 35%, rgba(61, 133, 247, 1) 100%);
+    color: transparent;
+    background-clip: text;
+}
+
+.benefits_section {
+    padding-block: 8rem;
+}
