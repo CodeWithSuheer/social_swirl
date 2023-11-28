@@ -7,10 +7,13 @@ import "./HomePage.css";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import WaleedsProfile from "../../assets/images/WaleedsProfile.jpeg";
+import CountUp from "react-countup";
+import ScrollTrigger from "react-scroll-trigger";
 
 
 const HomePage = () => {
     const dispatch = useDispatch();
+    const [counterOn, setCounterOn] = useState(false);
 
     const courseData = useSelector((state) => state.course.courseData);
 
@@ -91,6 +94,7 @@ const HomePage = () => {
             </section>
 
 
+
             {/* ----------- SECTION NO 1 -----------  */}
             <section className="text-gray-600 body-font">
                 <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -109,6 +113,7 @@ const HomePage = () => {
             </section>
 
 
+
             {/* ----------- SECTION NO 2 -----------  */}
             <section className="text-gray-600 body-font">
                 <div className="container mx-auto flex px-5 py-24 mb-16 md:flex-row flex-col items-center">
@@ -123,69 +128,43 @@ const HomePage = () => {
             </section>
 
 
-            {/* ----------- SECTION NO 3 -----------  */}
-            <section style={{ backgroundColor: "#0066b2" }}>
-                <div className="container grid grid-cols-2 gap-8 py-14 mx-auto text-center md:grid-cols-4">
-                    <div>
-                        <h5 className="text-5xl font-bold text-white animate-value" data-value="1500">
-                            <span className="inline text-white" id="animatedValue">
-                                1500
-                            </span>
-                            <span className="text-indigo-200">
-                                +
-                            </span>
-                        </h5>
+
+            {/* ----------- SECTION NO 3: COUNTER SECTION -----------  */}
+            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                <section style={{ backgroundColor: "#0066b2" }}>
+                    <div className="container grid grid-cols-2 gap-8 py-14 mx-auto text-center md:grid-cols-4">
+                        <div>
+                            <h5 id="animatedNumber" className="text-5xl font-bold text-white animate-value" data-value="1500">
+                                {counterOn && <CountUp start={0} end={350} duration={2} />}+
+                            </h5>
+                            <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">Student Enrolled</p>
+                        </div>
+                        <div>
+                            <h5 className="text-5xl font-bold text-white">
+                                {counterOn && <CountUp start={0} end={14} duration={2} />}+
+                            </h5>
+                            <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">Ongoing contracts</p>
+                        </div>
+                        <div>
+                            <h5 className="text-5xl font-bold text-white">
+                                {counterOn && <CountUp start={0} end={31} duration={2} />}+
+                            </h5>
+                            <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">Finished projects</p>
+                        </div>
+                        <div>
+                            <h5 className="text-5xl font-bold text-white">
+                                {counterOn && <CountUp start={0} end={3} duration={2} />}+
+                            </h5>
+                            <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">Years in business</p>
+                        </div>
+                    </div>
+                </section>
+            </ScrollTrigger>
 
 
-                        <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">
-                            Student Enrolled
-                        </p>
-                    </div>
-                    <div>
-                        <h5 className="text-5xl font-bold text-white">
-                            <span className="inline text-white">
-                                14
-                            </span>
-                            <span className="text-indigo-200">
-                                +
-                            </span>
-                        </h5>
-                        <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">
-                            Ongoing contracts
-                        </p>
-                    </div>
-                    <div>
-                        <h5 className="text-5xl font-bold text-white">
-                            <span className="inline text-white">
-                                31
-                            </span>
-                            <span className="text-indigo-200">
-                                +
-                            </span>
-                        </h5>
-                        <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">
-                            Finished projects
-                        </p>
-                    </div>
-                    <div>
-                        <h5 className="text-5xl font-bold text-white">
-                            <span className="inline text-white">
-                                3
-                            </span>
-                            <span className="text-indigo-200">
-                                +
-                            </span>
-                        </h5>
-                        <p className="text-xs font-medium tracking-wide text-indigo-100 uppercase">
-                            Years in business
-                        </p>
-                    </div>
-                </div>
-            </section>
 
             {/* ----------- SECTION NO 4 -----------  */}
             <section className="benefits_section text-gray-600 body-font">
-
                 <div className="container px-5 mx-auto">
                     <div className="text-center mb-12">
                         <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Unlock Your Potential with Our Web Development Course</h1>
@@ -247,155 +226,8 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ----------- SECTION NO 4: SLIDER -----------  */}
-            {/* <Slider /> */}
-
-            {/* <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-col text-center w-full mb-20">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
-                    </div>
-                    <div className="flex flex-wrap -m-2">
-                        <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-                            <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
-                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
-                                <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font font-medium">Waleed Ahmad</h2>
-                                    <p className="text-gray-500">Frontend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-                            <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
-                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
-                                <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font font-medium">Haris Saeed</h2>
-                                    <p className="text-gray-500">Backend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-                            <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
-                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
-                                <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font font-medium">Suheer Zahid</h2>
-                                    <p className="text-gray-500">Frontend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-                            <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
-                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
-                                <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font font-medium">Rehman</h2>
-                                    <p className="text-gray-500">WordPress Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-                            <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
-                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
-                                <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font font-medium">Awais</h2>
-                                    <p className="text-gray-500">Seo Expert</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-                            <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
-                                <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={WaleedsProfile} />
-                                <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font font-medium">Numan</h2>
-                                    <p className="text-gray-500">Graphic Designer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-
-            <section className="py-14">
-                <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
-                    <div className="max-w-xl mx-auto">
-                        <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                            Meet our team
-                        </h3>
-                        <p className="text-gray-600 mt-3">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
-                        </p>
-                    </div>
-                    <div className="my-20">
-                        <ul className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-                            {
-                                team.map((item, idx) => (
-                                    <li key={idx}>
-                                        <div className="w-24 h-24 mx-auto">
-                                            <img
-                                                src={item.avatar}
-                                                className="w-full h-full rounded-full"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="mt-2">
-                                            <h4 className="text-gray-700 font-semibold sm:text-lg">{item.name}</h4>
-                                            <p className="text-indigo-600">{item.title}</p>
-                                            <p className="text-gray-600 mt-2">{item.desc}</p>
-                                            <div className="mt-4 flex justify-center gap-4 text-gray-400">
-                                                <a href={item.twitter}>
-                                                    <svg className="w-5 h-5 duration-150 hover:text-gray-500" fill="currentColor" viewBox="0 0 48 48"><g clip-path="url(#clip0_17_80)"><path fill="currentColor" d="M15.1 43.5c18.11 0 28.017-15.006 28.017-28.016 0-.422-.01-.853-.029-1.275A19.998 19.998 0 0048 9.11c-1.795.798-3.7 1.32-5.652 1.546a9.9 9.9 0 004.33-5.445 19.794 19.794 0 01-6.251 2.39 9.86 9.86 0 00-16.788 8.979A27.97 27.97 0 013.346 6.299 9.859 9.859 0 006.393 19.44a9.86 9.86 0 01-4.462-1.228v.122a9.844 9.844 0 007.901 9.656 9.788 9.788 0 01-4.442.169 9.867 9.867 0 009.195 6.843A19.75 19.75 0 010 39.078 27.937 27.937 0 0015.1 43.5z" /></g><defs><clipPath id="clip0_17_80"><path fill="currentColor" d="M0 0h48v48H0z" /></clipPath></defs></svg>
-                                                </a>
-                                                <a href={item.linkedin}>
-                                                    <svg className="w-5 h-5 duration-150 hover:text-gray-500" fill="none" viewBox="0 0 48 48"><g clip-path="url(#clip0_17_68)"><path fill="currentColor" d="M44.447 0H3.544C1.584 0 0 1.547 0 3.46V44.53C0 46.444 1.584 48 3.544 48h40.903C46.407 48 48 46.444 48 44.54V3.46C48 1.546 46.406 0 44.447 0zM14.24 40.903H7.116V17.991h7.125v22.912zM10.678 14.87a4.127 4.127 0 01-4.134-4.125 4.127 4.127 0 014.134-4.125 4.125 4.125 0 010 8.25zm30.225 26.034h-7.115V29.766c0-2.653-.047-6.075-3.704-6.075-3.703 0-4.265 2.896-4.265 5.887v11.325h-7.107V17.991h6.826v3.13h.093c.947-1.8 3.272-3.702 6.731-3.702 7.21 0 8.541 4.744 8.541 10.912v12.572z" /></g><defs><clipPath id="clip0_17_68"><path fill="currentColor" d="M0 0h48v48H0z" /></clipPath></defs></svg>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-
-            {/* <section className="py-14">
-                <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-                    <div className="max-w-xl sm:text-center md:mx-auto">
-                        <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                            See what others saying about us
-                        </h3>
-                        <p className="mt-3 text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et est hendrerit, porta nunc vitae, gravida justo. Nunc fermentum magna lorem, euismod volutpat arcu volutpat et.
-                        </p>
-                    </div>
-                    <div className="mt-12">
-                        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                            {
-                                testimonials.map((item, idx) => (
-                                    <li key={idx} className="bg-gray-100 p-4 rounded-xl">
-                                        <figure>
-                                            <div className="flex items-center gap-x-4">
-                                                <img src={item.avatar} className="w-16 h-16 rounded-full" />
-                                                <div>
-                                                    <span className="block text-gray-800 font-semibold">{item.name}</span>
-                                                    <span className="block text-gray-600 text-sm mt-0.5">{item.title}</span>
-                                                </div>
-                                            </div>
-                                            <blockquote>
-                                                <p className="mt-6 text-gray-700">
-                                                    {item.quote}
-                                                </p>
-                                            </blockquote>
-                                        </figure>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </section> */}
-
+            {/* ----------- SECTION NO 4: SLIDER --> TESTIMONIAL-----------  */}
+            <Slider slide={1} />
 
 
         </>

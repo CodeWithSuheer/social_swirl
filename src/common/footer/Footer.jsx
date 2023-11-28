@@ -32,7 +32,7 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="footer text-gray-700 px-4 py-5 w-full mx-auto md:px-8">
+        <footer className="footer text-gray-700 px-4 py-5 w-full mx-auto md:px-8 bg-white">
             <div className="max-w-lg sm:mx-auto sm:text-center">
                 <img src={logo} className="w-32 sm:mx-auto" />
                 <p className="leading-relaxed mt-2 text-[15px]">

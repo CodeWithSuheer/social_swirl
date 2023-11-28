@@ -5,6 +5,10 @@ import socialMediaMarketing from "../assets/images/socialMediaMarketing.jpg";
 import backEndDev from "../assets/images/backEndDev.jpeg";
 import hr_Management from "../assets/images/hr_Management.jpg";
 import WaleedsProfile from "../assets/images/WaleedsProfile.jpeg";
+import image1 from "../assets/images/image1.jpeg";
+import image2 from "../assets/images/image2.jpeg";
+import image3 from "../assets/images/image3.jpeg";
+import image4 from "../assets/images/image4.jpeg";
 
 const courseData = [
     {
@@ -31,7 +35,7 @@ const courseData = [
         name: "Graphic Designing",
         instructor: "Jamal Khan",
         instructor_post: "Senior Graphic Designer",
-        instructor_img: WaleedsProfile,
+        instructor_img: image2,
         duration: "1 to 3 Months",
         cover: GraphicDesigning,
         price: "50,000",
@@ -49,7 +53,7 @@ const courseData = [
         name: "SEO",
         instructor: "Waleed Ahmad",
         instructor_post: "Senior Graphic Designer",
-        instructor_img: WaleedsProfile,
+        instructor_img: image3,
         duration: "1 to 3 Months",
         cover: SEO,
         price: "50,000",
@@ -67,7 +71,7 @@ const courseData = [
         name: "Social Media Marketing",
         instructor: "Sir Waleed",
         instructor_post: "Senior Graphic Designer",
-        instructor_img: WaleedsProfile,
+        instructor_img: image1,
         duration: "1 to 3 Months",
         cover: frontEndDev,
         price: "50,000",
@@ -85,7 +89,7 @@ const courseData = [
         name: "Back End Development",
         instructor: "Sir Waleed",
         instructor_post: "Senior Graphic Designer",
-        instructor_img: WaleedsProfile,
+        instructor_img: image2,
         duration: "1 to 3 Months",
         cover: frontEndDev,
         price: "50,000",
@@ -103,7 +107,7 @@ const courseData = [
         name: "Human Recourse Management",
         instructor: "Sir Waleed",
         instructor_post: "Senior Graphic Designer",
-        instructor_img: WaleedsProfile,
+        instructor_img: image3,
         duration: "1 to 3 Months",
         cover: frontEndDev,
         price: "50,000",

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import "./SelectedCourse.css";
 import OtherCourses from "./OtherCourses";
+import AboutSection from './AboutSection';
 
 
 const SelectedCourse = () => {
@@ -138,66 +139,55 @@ const SelectedCourse = () => {
                 </div>
             </section>
 
-            {/* ----------- STUDENTS REVIEWS -----------  */}
-            <section>
-                <div class="container mx-auto flex px-5 pt-20 pb-14 flex-col">
-                    <h1 class="title-font sm:text-2xl lg:text-4xl mb-8 font-medium text-gray-700 text-center">Our Students Reviews</h1>
-                    <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
-                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-b border-gray-300 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
-                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Game-Changing Experience</h3>
-                                <p class="my-4">This course provided a game-changing experience for me. The hands-on projects and real-world applications significantly enhanced my web development skills.</p>
-                            </blockquote>
-                            <figcaption class="flex items-center justify-center ">
-                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture" />
-                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                                    <div>Javiad</div>
-                                    <div class="text-sm text-gray-500 dark:text-gray-400 ">Frontend Developer at ABC Tech</div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-b border-gray-300 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
-                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Invaluable Insights</h3>
-                                <p class="my-4">The course content was excellent, providing invaluable insights into the latest web development technologies. It prepared me well for real-world projects.</p>
-                            </blockquote>
-                            <figcaption class="flex items-center justify-center ">
-                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture" />
-                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                                    <div>Obama Jamshed</div>
-                                    <div class="text-sm text-gray-500 dark:text-gray-400">Full Stack Developer at XYZ Innovations</div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-b border-gray-300 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
-                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Practical Skills Gained</h3>
-                                <p class="my-4">I gained practical skills that are directly applicable in the industry. The course structure and mentor support were instrumental in my success.</p>
-                            </blockquote>
-                            <figcaption class="flex items-center justify-center ">
-                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture" />
-                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                                    <div>Trump Malik</div>
-                                    <div class="text-sm text-gray-500 dark:text-gray-400">Software Engineer at WebSolutions</div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                        <figure class="flex flex-col items-center justify-center p-8 text-center bg-gray-200 border-gray-300 rounded-b-lg md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
-                            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Career-Boosting Course</h3>
-                                <p class="my-4">Enrolling in this course was a career-changing decision. The practical approach and industry-relevant projects elevated my coding and problem-solving abilities.</p>
-                            </blockquote>
-                            <figcaption class="flex items-center justify-center ">
-                                <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture" />
-                                <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-                                    <div>Sunny Rana</div>
-                                    <div class="text-sm text-gray-500 dark:text-gray-400">Web Developer at Tech Innovate</div>
-                                </div>
-                            </figcaption>
-                        </figure>
+            {/* ----------- FAQ'S SECTION -----------  */}
+            <section className="mx-auto max-w-7xl px-2 mt-20 py-10 md:px-0">
+                <div>
+                    <div className="mx-auto max-w-2xl lg:text-center">
+                        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600 lg:mx-auto">
+                            Explore FAQs for quick answers.
+                        </p>
+
                     </div>
+                    <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 md:mt-16 md:grid-cols-2">
+                        <div>
+                            <h2 className="text-xl font-semibold text-black">How do I get started?</h2>
+                            <p className="mt-2 text-sm leading-6 tracking-wide text-gray-700">
+                                Enroll in the course, and you'll gain access to learning materials and resources.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold text-black">Duration of the course?</h2>
+                            <p className="mt-2 text-sm leading-6 tracking-wide text-gray-700">
+                                Courses typically last around 2 months. Specific details are available on the course page.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold text-black">Is the course beneficial?</h2>
+                            <p className="mt-2 text-sm leading-6 tracking-wide text-gray-700">
+                                Absolutely! Gain valuable knowledge and skills to enhance your expertise and open new opportunities.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold text-black">Internship after the course?</h2>
+                            <p className="mt-2 text-sm leading-6 tracking-wide text-gray-700">
+                                Yes, bright students are eligible for internship opportunities to apply their knowledge in real-world scenarios.
+                            </p>
+                        </div>
+                    </div>
+                    <p className="mt-10 text-center text-gray-600">
+                        Can&apos;t find what you&apos;re looking for?{' '}
+                        <a href="#" title="" className="black font-semibold hover:underline">
+                            Contact us
+                        </a>
+                    </p>
                 </div>
             </section>
+
+            <AboutSection />
+
 
             {/* ----------- VIDEO SECTIONS -----------  */}
             <section>
@@ -209,7 +199,7 @@ const SelectedCourse = () => {
 
 
             {/* ----------- OTHER COURSES ----------- */}
-            <OtherCourses otherCourse={otherCourse} />
+            <OtherCourses otherCourse={otherCourse} slide={3} />
 
 
         </>

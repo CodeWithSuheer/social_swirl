@@ -6,7 +6,7 @@ import 'swiper/css/effect-coverflow';
 import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow, Controller } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 
-const OtherCourses = ({ otherCourse }) => {
+const OtherCourses = ({ otherCourse, slide }) => {
     const navigate = useNavigate();
 
     const handleClick = (course_id) => {
@@ -17,7 +17,7 @@ const OtherCourses = ({ otherCourse }) => {
     return (
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto">
-                <h1 class="title-font sm:text-4xl lg:text-5xl mt-5 mb-3 font-medium text-blue-600 text-center">Other Courses</h1>
+                <h1 class="title-font sm:text-4xl lg:text-5xl mt-5 mb-3 font-medium text-gray-800 text-center">Other Courses</h1>
                 <h4 class="title-font sm:text-xl lg:text-xl text-xl mb-10 font-small text-gray-700 text-center">Explore the other courses we offer and get benefits</h4>
                 <Swiper
                     effect={'coverflow'}
@@ -34,7 +34,7 @@ const OtherCourses = ({ otherCourse }) => {
                     }
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={-40}
-                    slidesPerView={3}
+                    slidesPerView={slide}
                     navigation
                     // pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}

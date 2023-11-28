@@ -5,12 +5,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow, Controller } from 'swiper/modules';
+import WaleedsProfile from "../../assets/images/WaleedsProfile.jpeg";
+import suheer from "../../assets/images/image1.jpeg";
 
-const Slider = () => {
+
+const Slider = ({ slide }) => {
     return (
         <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 my-24 mx-auto">
-                <h1 class="title-font sm:text-4xl text-3xl mb-6 font-medium text-gray-700 text-center">Our testimonial</h1>
+            <div class="container px-5 py-8 mb-16 mx-auto">
+                <h1 class="title-font sm:text-4xl text-3xl mb-16 font-medium text-gray-700 text-center">Our testimonial</h1>
                 <Swiper
                     effect={'coverflow'}
                     grabCursor={true}
@@ -26,7 +29,7 @@ const Slider = () => {
                     }
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={50}
-                    slidesPerView={1}
+                    slidesPerView={slide}
                     navigation
                     // pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
@@ -35,11 +38,22 @@ const Slider = () => {
 
                     {sliderData.map((slider) => (
                         <SwiperSlide>
-                            <div key={slider.id} class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-                                <p class="leading-relaxed text-lg">{slider.text}</p>
-                                <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span>
-                                <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HOLDEN CAULFIELD</h2>
-                                <p class="text-gray-500">{slider.name}</p>
+                            <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+                                <div className="max-w-3xl mx-auto" key={slider.id}>
+                                    <figure>
+                                        <blockquote>
+                                            <p className="text-gray-700 text-xl text-center sm:text-xl">“{slider.text}“</p>
+                                        </blockquote>
+
+                                        <div className="flex justify-center items-center gap-x-4 mt-6">
+                                            <img src={suheer} className="w-16 h-16 rounded-full" />
+                                            <div>
+                                                <span className="block text-gray-800 font-medium">{slider.name}</span>
+                                                <span className="block text-gray-600 text-sm mt-0.5">Founder of meta</span>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
@@ -51,5 +65,4 @@ const Slider = () => {
 }
 
 export default Slider
-
 
