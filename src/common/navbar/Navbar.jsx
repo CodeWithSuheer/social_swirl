@@ -58,7 +58,7 @@ const Navbar = () => {
                 <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'}  sm:flex-col lg:flex-row`} >
 
                     <ul className="flex flex-col md:flex md:flex-row justify-center items-center space-y-6 md:space-x-6 md:space-y-0">
-                        <Link to="/" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Home</Link>
+                        <Link to="/" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Homeeee</Link>
                         <Link to="/aboutus" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">About Us</Link>
                         <Link to="/careers" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Careers</Link>
                         <Link to="/outsourcing" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Business Outsourcing</Link>
