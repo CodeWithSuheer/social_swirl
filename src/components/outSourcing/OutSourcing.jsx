@@ -3,7 +3,9 @@ import React from 'react'
 const OutSourcing = () => {
     return (
         <>
-            <h2>OutSourcing</h2>
+        <section className='p-40'>
+            <h2 className='text-center font-bold text-3xl'>Comming Soon !!!</h2>
+        </section>
         </>
     )
 }
