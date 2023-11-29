@@ -67,10 +67,9 @@ const SelectedCourse = () => {
                                         <span className='text-blue-900 mr-1'>#</span>Features
                                     </h1>
                                     <ul className='ml-10'>
-                                        <li className='text-lg text-gray-700 list-disc'>Training in the supervision of a veteran web developer and freelance</li>
-                                        <li className='text-lg text-gray-700 list-disc'>Opportunity to get an internship after training.</li>
-                                        <li className='text-lg text-gray-700 list-disc'>Focus on the in-demand technologies</li>
-                                        <li className='text-lg text-gray-700 list-disc'>A fast-track training that surely train you in 3 months.</li>
+                                        {course.features.map((feature, index) => (
+                                            <li key={index} className='text-lg text-gray-700 list-disc'>{feature}</li>
+                                        ))}
                                     </ul>
                                 </div>
 
