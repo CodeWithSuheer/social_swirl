@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import "./SelectedCourse.css";
 import OtherCourses from "./OtherCourses";
 import AboutSection from './AboutSection';
@@ -110,10 +110,10 @@ const SelectedCourse = () => {
                                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Course Fee: {course.price}</h5>
                                         <p class="font-normal text-gray-700 dark:text-gray-400">Unlock your potential with our comprehensive web development course. Gain the knowledge required not just to enter the job market, but to stand out and make a lasting impact.</p>
 
-                                        <button class="button mt-5">
+                                        <Link to="/" class="button mt-5">
                                             <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg"><path d="m18 0 8 12 10-8-4 20H4L0 4l10 8 8-12z"></path></svg>
                                             ENROLL NOW
-                                        </button>
+                                        </Link>
                                     </div>
 
                                 </div>

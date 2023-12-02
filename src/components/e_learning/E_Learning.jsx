@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./E_Learning.css";
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import E_Learning_hero from "../../assets/images/E_Learning_hero.jpg";
 import CompanyStats from './CompanyStats';
 import WaleedsProfile from "../../assets/images/WaleedsProfile.jpeg";
+import OurTeam from '../aboutus/OurTeam';
 
 const E_learning = () => {
     const navigate = useNavigate();
     const courseData = useSelector((state) => state.course.courseData);
 
 
+    useEffect(() => {
+        Aos.init({ duration: 1200 });
+    }, [])
+
+
     const handleClick = (course_id) => {
         navigate(`/selectedCourse/${course_id}`);
         window.scrollTo(0, 0);
     }
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     const team = [
         {
@@ -87,25 +99,8 @@ const E_learning = () => {
                     {/* ------------ COURSES ------------ */}
                     <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3">
                         {courseData.map((course) => (
-                            // <div key={course.id} className="course_card m-auto overflow-hidden rounded-lg shadow-lg h-90 w-60 md:w-80">
-                            //     <div className="block w-full h-full">
-                            //         <img alt="blog photo" src={course.cover} className="object-cover w-full max-h-48" />
-
-                            //         <div className="w-full p-4 bg-white">
-                            //             <p className="font-medium text-indigo-500 text-md pb-1">{course.course_no}</p>
-                            //             <p className="mb-2 text-xl font-medium text-gray-800">{course.name}</p>
-                            //             <p className="text-gray-800 text-md">{course.instructor}</p>
-                            //             <p className="text-gray-800 text-md py-1">Duration: {course.duration}</p>
-                            //             <div className="flex items-center mt-5">
-                            //                 <div className="flex flex-col justify-between text-sm">
-                            //                     <button onClick={() => handleClick(course.id)} type="button" className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Enroll Now</button>
-                            //                 </div>
-                            //             </div>
-                            //         </div>
-                            //     </div>
-                            // </div>
-                            <article className="bg-white max-w-xs mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm" key={course.id}>
-                                <div className='cursor-pointer' onClick={() => handleClick(course.id)}>
+                            <article className="bg-white max-w-xs mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm" key={course.id} data-aos="fade-up">
+                                <div className='cursor-pointer' onClick={() => handleClick(course.id)} >
                                     <img src={course.cover} loading="lazy" alt="..." className="w-full h-48 rounded-t-md" />
                                     <div className="flex items-center mt-2 pt-3 ml-4 mr-2 ">
                                         <div className="flex-none w-10 h-10 rounded-full">
@@ -156,7 +151,7 @@ const E_learning = () => {
             {/* <CompanyStats /> */}
 
 
-            <section className="py-14 my-14">
+            {/* <section className="py-14 my-14">
                 <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
                     <div className="max-w-xl mx-auto">
                         <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
@@ -181,7 +176,6 @@ const E_learning = () => {
                                         <div className="mt-2">
                                             <h4 className="text-gray-700 font-semibold sm:text-lg">{item.name}</h4>
                                             <p className="text-indigo-600">{item.title}</p>
-                                            {/* <p className="text-gray-600 mt-2">{item.desc}</p> */}
                                             <div className="mt-4 flex justify-center gap-4 text-gray-400">
                                                 <a href={item.twitter}>
                                                     <svg className="w-5 h-5 duration-150 hover:text-gray-500" fill="currentColor" viewBox="0 0 48 48"><g clip-path="url(#clip0_17_80)"><path fill="currentColor" d="M15.1 43.5c18.11 0 28.017-15.006 28.017-28.016 0-.422-.01-.853-.029-1.275A19.998 19.998 0 0048 9.11c-1.795.798-3.7 1.32-5.652 1.546a9.9 9.9 0 004.33-5.445 19.794 19.794 0 01-6.251 2.39 9.86 9.86 0 00-16.788 8.979A27.97 27.97 0 013.346 6.299 9.859 9.859 0 006.393 19.44a9.86 9.86 0 01-4.462-1.228v.122a9.844 9.844 0 007.901 9.656 9.788 9.788 0 01-4.442.169 9.867 9.867 0 009.195 6.843A19.75 19.75 0 010 39.078 27.937 27.937 0 0015.1 43.5z" /></g><defs><clipPath id="clip0_17_80"><path fill="currentColor" d="M0 0h48v48H0z" /></clipPath></defs></svg>
@@ -197,7 +191,8 @@ const E_learning = () => {
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <OurTeam />
 
         </>
     )

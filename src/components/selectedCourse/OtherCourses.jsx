@@ -35,6 +35,7 @@ const OtherCourses = ({ otherCourse, slide }) => {
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={-40}
                     slidesPerView={slide}
+                    
                     navigation
                     // pagination={{ clickable: true }}
                     onSwiper={(swiper) => console.log(swiper)}

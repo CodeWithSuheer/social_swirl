@@ -76,7 +76,7 @@ const HomePage = () => {
             {/* ----------- HERO SECTION -----------  */}
             <section className="mx-auto max-w-screen-xl pb-12 px-4 items-center lg:flex md:px-8">
                 <div className="space-y-4 flex-1 sm:text-center lg:text-left pt-10">
-                    <h1 className="hero-title title-font pt-12 lg:pt-4 text-5xl sm:text-7xl md:text-7xl lg:text-7xl mb-4 font-medium">Social Swirl</h1>
+                    <h1 className="hero-title title-font pt-12 lg:pt-4 text-5xl sm:text-7xl md:text-7xl lg:text-7xl mb-4 font-bold">Social Swirl</h1>
                     <p className="mb-8 leading-relaxed">Explore the world of web development with Social Swirl. Join our user-friendly courses led by industry experts, offering hands-on experiences and a clear path to mastering coding. Join us to unlock your coding skills and confidently shape your future success!</p>
 
                     <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
@@ -103,10 +103,10 @@ const HomePage = () => {
                     </div>
                     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
                         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to Social Swirl</h1>
-                        <h3 className="title-font sm:text-4xl lg:text-2xl mb-4 font-medium text-blue-600">Best Institute of Pakistan</h3>
+                        <h3 className="title-font sm:text-4xl lg:text-2xl mb-4 font-medium text-blue-600">Best Software House of Pakistan</h3>
                         <p className="mb-8 leading-relaxed">The company's mission is to provide high-quality software solutions and media that help businesses and individuals optimise their online presence and achieve their goals. With a team of experienced professionals and a commitment to excellence, Social Swirl is dedicated to providing personalised, reliable, and affordable services to its clients. AIMS Our mission is to provide high-quality software solutions and media services that help businesses and individuals optimise their online presence and achieve their goals.</p>
                         <div className="flex justify-center">
-                            <Link to="/elearning" onClick={handleClick} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Enroll Now</Link>
+                            <Link to="/elearning" onClick={handleClick} className="inline-flex text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl border-0 py-2 px-6 focus:outline-none rounded text-lg">Enroll Now</Link>
                         </div>
                     </div>
                 </div>
@@ -167,8 +167,15 @@ const HomePage = () => {
             <section className="benefits_section text-gray-600 body-font">
                 <div className="container px-5 mx-auto">
                     <div className="text-center mb-12">
-                        <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Unlock Your Potential with Our Web Development Course</h1>
-                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Are you ready to take your skills to the next level? Our comprehensive web development course offers a unique learning experience with a focus on real-world applications and hands-on projects.</p>
+                        <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+                            Elevate Your Skills with Social Swirl's Diverse Course Offerings
+                        </h1>
+                        <p className="text-base leading-relaxed xl:w-2/3 lg:w-3/4 mx-auto">
+                            Explore hands-on projects at Social Swirl. Unlock your potential with our real-world applications.
+                        </p>
+
+
+
                     </div>
                     <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                         <div className="p-2 sm:w-1/2 w-full">

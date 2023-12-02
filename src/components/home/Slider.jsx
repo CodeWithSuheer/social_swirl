@@ -46,10 +46,10 @@ const Slider = ({ slide }) => {
                                         </blockquote>
 
                                         <div className="flex justify-center items-center gap-x-4 mt-6">
-                                            <img src={suheer} className="w-16 h-16 rounded-full" />
+                                            <img src={slider.img} className="w-16 h-16 rounded-full" />
                                             <div>
                                                 <span className="block text-gray-800 font-medium">{slider.name}</span>
-                                                <span className="block text-gray-600 text-sm mt-0.5">Founder of meta</span>
+                                                <span className="block text-gray-600 text-sm mt-0.5">Social Swirl Workforce</span>
                                             </div>
                                         </div>
                                     </figure>
