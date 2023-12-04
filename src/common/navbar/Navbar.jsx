@@ -115,34 +115,14 @@ const Navbar = () => {
             >
               E-Learning
             </Link>
+            <Link
+              to="/paymentMethod"
+              className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium"
+            >
+              Payment
+            </Link>
           </ul>
 
-<<<<<<< HEAD
-                    <ul className="flex flex-col md:flex md:flex-row justify-center items-center space-y-6 md:space-x-6 md:space-y-0">
-                        <Link to="/" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Home</Link>
-                        <Link to="/aboutus" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">About Us</Link>
-                        <Link to="/careers" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Careers</Link>
-                        <Link to="/outsourcing" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Business Outsourcing</Link>
-                        <Link to="/elearning" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">E-Learning</Link>
-                        <Link to="/paymentMethod" className="button_navbar text-gray-600 hover:text-gray-800 rounded-md px-3 pt-1 text-md font-medium">Payment</Link>
-                    </ul>
-
-
-                    <div className="flex-1 gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
-                        <Link to="/login" className="block text-gray-600 text-lg font-medium text-center">
-                            Log in
-                        </Link>
-                        <Link to="/signup" className="block py-2.5 px-5 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline">
-                            Sign in
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </nav >
-    )
-}
-export default Navbar
-=======
           <div className="flex-1 gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
             <Link
               to="/login"
@@ -163,4 +143,3 @@ export default Navbar
   );
 };
 export default Navbar;
->>>>>>> 0cf10bce1a86a7826c51419ac9cae69a2601d25e
